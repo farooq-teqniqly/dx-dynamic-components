@@ -22,7 +22,11 @@
             "tsConfig": "apps/demo/tsconfig.app.json",
             "aot": true,
             "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
-            "styles": ["apps/demo/src/styles.scss"],
+            "styles": [
+              "apps/demo/src/styles.scss",
+              "node_modules/devextreme/dist/css/dx.common.css",
+              "node_modules/devextreme/dist/css/dx.light.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -118,6 +122,38 @@
             "tsConfig": ["apps/demo-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/demo-e2e/**"]
           }
+        }
+      }
+    },
+    "dx": {
+      "projectType": "library",
+      "root": "libs/dx",
+      "sourceRoot": "libs/dx/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/dx/tsconfig.lib.json",
+              "libs/dx/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/dx/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/dx/jest.config.js",
+            "tsConfig": "libs/dx/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/dx/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
         }
       }
     }

@@ -15,7 +15,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@demo/dx": ["libs/dx/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
