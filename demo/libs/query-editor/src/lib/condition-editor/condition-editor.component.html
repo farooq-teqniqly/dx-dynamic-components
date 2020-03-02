@@ -2,49 +2,51 @@
   [(formData)]="condition"
   (onFieldDataChanged)="onFormDataChanged($event)"
 >
-  <dxi-item
-    dataField="logicalOperator"
-    editorType="dxSelectBox"
-    [editorOptions]="{
-      dataSource: logicalOperators,
-      displayExpr: 'name',
-      valueExpr: 'id',
-      placeholder: 'Select logical operator'
-    }"
-  ></dxi-item>
-  <dxi-item dataField="group" placeholder="Enter group name"></dxi-item>
-  <dxi-item
-    dataField="field"
-    editorType="dxSelectBox"
-    [editorOptions]="{
-      dataSource: fields,
-      displayExpr: 'expandedName',
-      valueExpr: 'name',
-      placeholder: 'Select field'
-    }"
-  ></dxi-item>
-  <dxi-item
-    dataField="aggregation"
-    editorType="dxSelectBox"
-    [editorOptions]="{
-      dataSource: aggregations,
-      displayExpr: 'name',
-      valueExpr: 'id',
-      placeholder: 'Select aggregation'
-    }"
-  ></dxi-item>
-  <dxi-item
-    dataField="operator"
-    editorType="dxSelectBox"
-    [editorOptions]="{
-      dataSource: operators,
-      displayExpr: 'name',
-      valueExpr: 'id',
-      placeholder: 'Select operator'
-    }"
-  ></dxi-item>
-  <dxi-item
-    dataField="threshold"
-    placeholder="Enter threshold value"
-  ></dxi-item>
+  <dxi-item itemType="group" [colCount]="6" cssClass="condition">
+    <dxi-item
+      dataField="logicalOperator"
+      editorType="dxSelectBox"
+      [editorOptions]="{
+        dataSource: logicalOperators,
+        displayExpr: 'name',
+        valueExpr: 'id',
+        placeholder: 'Select logical operator'
+      }"
+    ></dxi-item>
+    <dxi-item dataField="group" placeholder="Enter group name"></dxi-item>
+    <dxi-item
+      dataField="field"
+      editorType="dxSelectBox"
+      [editorOptions]="{
+        dataSource: fields,
+        displayExpr: 'expandedName',
+        valueExpr: 'name',
+        placeholder: 'Select field'
+      }"
+    ></dxi-item>
+    <dxi-item
+      dataField="aggregation"
+      editorType="dxSelectBox"
+      [editorOptions]="{
+        dataSource: aggregations,
+        displayExpr: 'name',
+        valueExpr: 'id',
+        placeholder: 'Select aggregation'
+      }"
+    ></dxi-item>
+    <dxi-item
+      dataField="operator"
+      editorType="dxSelectBox"
+      [editorOptions]="{
+        dataSource: operators,
+        displayExpr: 'name',
+        valueExpr: 'id',
+        placeholder: 'Select operator'
+      }"
+    ></dxi-item>
+    <dxi-item
+      dataField="threshold"
+      placeholder="Enter threshold value"
+    ></dxi-item>
+  </dxi-item>
 </dx-form>
