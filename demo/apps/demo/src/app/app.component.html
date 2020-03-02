@@ -1,4 +1,14 @@
 <demo-query-editor
   [components]="componentTypes$ | async"
+  (componentChanged)="setTelemetryTypesForComponent($event)"
   [telemetryTypes]="telemetryTypes$ | async"
+  (telemetryTypeChanged)="setFieldsForTelemetryType($event)"
 ></demo-query-editor>
+<demo-condition-editor
+  [condition]="condition"
+  [logicalOperators]="logicalOperators$ | async"
+  [fields]="fields$ | async"
+  (formDataChanged)="onFormDataChanged($event)"
+  [aggregations]="aggregations$ | async"
+  [operators]="operators$ | async"
+></demo-condition-editor>

@@ -1,2 +1,15 @@
-<dx-select-box [dataSource]="components" valueExpr="id" displayExpr="name" placeholder="Select component"></dx-select-box>
-<dx-select-box [dataSource]="telemetryTypes" valueExpr="id" displayExpr="name" placeholder="Select telemetry type"></dx-select-box>
+<dx-select-box
+  [dataSource]="components"
+  valueExpr="id"
+  displayExpr="name"
+  placeholder="Select component"
+  (onValueChanged)="onComponentChanged($event.value)"
+></dx-select-box>
+<dx-select-box
+  [dataSource]="telemetryTypes"
+  valueExpr="id"
+  displayExpr="name"
+  placeholder="Select telemetry type"
+  (onValueChanged)="onTelemetryTypeChanged($event.value)"
+  [disabled]="!componentSelected"
+></dx-select-box>
