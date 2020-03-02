@@ -1,4 +1,11 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
 import { ComponentType, TelemetryType } from '../models';
 
 @Component({
@@ -8,18 +15,18 @@ import { ComponentType, TelemetryType } from '../models';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QueryEditorComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   componentSelected = false;
 
   @Input() components: ComponentType[];
   @Input() telemetryTypes: TelemetryType[];
   @Output() componentChanged: EventEmitter<string> = new EventEmitter<string>();
-  @Output() telemetryTypeChanged: EventEmitter<string> = new EventEmitter<string>();
+  @Output() telemetryTypeChanged: EventEmitter<string> = new EventEmitter<
+    string
+  >();
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onComponentChanged(componentId: string): void {
     this.componentChanged.emit(componentId);

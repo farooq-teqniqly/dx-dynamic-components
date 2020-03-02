@@ -8,9 +8,8 @@ describe('QueryEditorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QueryEditorComponent ]
-    })
-    .compileComponents();
+      declarations: [QueryEditorComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

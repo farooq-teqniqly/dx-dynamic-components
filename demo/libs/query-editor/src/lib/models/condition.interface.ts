@@ -7,5 +7,5 @@ export interface Condition {
   field: Field;
   aggregation: Aggregation;
   operator: Operator;
-  threshold?: any
+  threshold?: any;
 }

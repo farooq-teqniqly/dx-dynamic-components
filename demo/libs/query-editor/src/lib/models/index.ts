@@ -6,4 +6,3 @@ export * from './field.interface';
 export * from './logical-operator.interface';
 export * from './operator.interface';
 export * from './telemetry-type.interface';
-
