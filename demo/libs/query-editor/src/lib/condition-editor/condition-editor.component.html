@@ -1,6 +1,7 @@
 <dx-form
   [(formData)]="condition"
   (onFieldDataChanged)="onFormDataChanged($event)"
+  [disabled]="!gotFields()"
 >
   <dxi-item itemType="group" [colCount]="7" cssClass="condition">
     <dxi-item

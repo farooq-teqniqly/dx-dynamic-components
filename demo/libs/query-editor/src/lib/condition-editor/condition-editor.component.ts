@@ -42,6 +42,10 @@ export class ConditionEditorComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  gotFields(): boolean {
+    return this.fields.length > 0;
+  }
+
   onFormDataChanged(e: any): any {
     console.log(e);
     this.formDataChanged.emit({ dataField: e.dataField, value: e.value });

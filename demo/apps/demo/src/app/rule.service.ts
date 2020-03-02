@@ -62,7 +62,7 @@ export class RuleService {
             {
               name: 'started',
               dataType: { id: 'boolean', name: 'boolean' },
-              expandedName: 'engine-miles () [boolean]'
+              expandedName: 'started () [boolean]'
             }
           ]);
         }
