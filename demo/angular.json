@@ -156,6 +156,38 @@
           "styleext": "scss"
         }
       }
+    },
+    "query-editor": {
+      "projectType": "library",
+      "root": "libs/query-editor",
+      "sourceRoot": "libs/query-editor/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/query-editor/tsconfig.lib.json",
+              "libs/query-editor/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/query-editor/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/query-editor/jest.config.js",
+            "tsConfig": "libs/query-editor/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/query-editor/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@demo/dx": ["libs/dx/src/index.ts"]
+      "@demo/dx": ["libs/dx/src/index.ts"],
+      "@demo/query-editor": ["libs/query-editor/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
