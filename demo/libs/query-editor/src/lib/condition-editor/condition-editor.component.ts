@@ -16,7 +16,17 @@ import { Field, Aggregation } from '../models';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ConditionEditorComponent implements OnInit {
-  constructor() {}
+  constructor() {
+    this.addConditionButtonOptions = {
+      icon: 'plus',
+      onClick: () => this.onAddConditionClicked()
+    };
+
+    this.removeConditionButtonOptions = {
+      icon: 'trash',
+      onClick: () => this.onRemoveConditionClicked()
+    };
+  }
 
   @Input() index = 0;
   @Input() condition: Condition;
@@ -27,10 +37,17 @@ export class ConditionEditorComponent implements OnInit {
 
   @Output() formDataChanged: EventEmitter<any> = new EventEmitter<any>();
 
+  addConditionButtonOptions: any;
+  removeConditionButtonOptions: any;
+
   ngOnInit(): void {}
 
   onFormDataChanged(e: any): any {
     console.log(e);
     this.formDataChanged.emit({ dataField: e.dataField, value: e.value });
   }
+
+  onAddConditionClicked(): void {}
+
+  onRemoveConditionClicked(): void {}
 }

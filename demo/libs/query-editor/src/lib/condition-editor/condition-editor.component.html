@@ -2,7 +2,7 @@
   [(formData)]="condition"
   (onFieldDataChanged)="onFormDataChanged($event)"
 >
-  <dxi-item itemType="group" [colCount]="6" cssClass="condition">
+  <dxi-item itemType="group" [colCount]="7" cssClass="condition">
     <dxi-item
       dataField="logicalOperator"
       editorType="dxSelectBox"
@@ -48,5 +48,15 @@
       dataField="threshold"
       placeholder="Enter threshold value"
     ></dxi-item>
+    <dxi-item itemType="group" [colSpan]="1">
+      <dxi-item
+        itemType="button"
+        [buttonOptions]="addConditionButtonOptions"
+      ></dxi-item>
+      <dxi-item
+        itemType="button"
+        [buttonOptions]="removeConditionButtonOptions"
+      ></dxi-item>
+    </dxi-item>
   </dxi-item>
 </dx-form>
